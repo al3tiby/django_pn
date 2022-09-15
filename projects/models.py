@@ -14,7 +14,7 @@ class Category(models.Model):
 class ProjectStatus(models.IntegerChoices):
     PENDING = 1, 'Pending'
     COMPLETED = 2, 'Completed'
-    POSTPNED = 3, 'Postponed'
+    POSTPONED = 3, 'Postponed'
     CANCELED = 4, 'Canceled'
     
 
@@ -36,6 +36,7 @@ class Project(models.Model):
     
     def __str__(self):
         return self.title
+
     
     
     
