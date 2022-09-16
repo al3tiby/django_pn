@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf.global_settings import AUTH_USER_MODEL
 
+
 # Create your models here.
 
 
@@ -16,7 +17,6 @@ class ProjectStatus(models.IntegerChoices):
     COMPLETED = 2, 'Completed'
     POSTPONED = 3, 'Postponed'
     CANCELED = 4, 'Canceled'
-
 
 
 class Project(models.Model):
@@ -39,9 +39,6 @@ class Project(models.Model):
         return self.title
 
 
-
-
-
 class Task(models.Model):
     description = models.TextField()
     is_completed = models.BooleanField(default=False)
@@ -49,4 +46,3 @@ class Task(models.Model):
 
     def __str__(self):
         return self.description
-

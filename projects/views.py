@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from django.urls import reverse_lazy
 from . import models, forms
 from django.shortcuts import render
@@ -15,4 +15,11 @@ class ProjectCreateView(CreateView):
     model = models.Project
     form_class = forms.ProjectCreateForm
     template_name = 'project/create.html'
+    success_url = reverse_lazy('Project_list')
+
+
+class ProjectUpdateView(UpdateView):
+    model = models.Project
+    form_class = forms.ProjectUpdateForm
+    template_name = 'project/update.html'
     success_url = reverse_lazy('Project_list')
