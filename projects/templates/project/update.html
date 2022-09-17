@@ -3,6 +3,8 @@
     <form method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Submit"/>
+        <button type="submit" value="Submit">Submit</button>
     </form>
+    <a href="{% url 'Project_delete' object.id %}">Delete</a>
+    {% include 'project/task.html' with project=object %}
 {% endblock %}
