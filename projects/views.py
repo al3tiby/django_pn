@@ -45,7 +45,7 @@ class TaskCreateView(CreateView):
 
 
 
-class TaskUpdateView(CreateView):
+class TaskUpdateView(UpdateView):
     model = models.Task
     fields = ['is_completed']
     http_method_names = ['post']
