@@ -44,6 +44,15 @@
                     </div>
                 </div>
             </div>
+            {% empty %}
+            <div class="col-md-12">
+                <div class="h-100 p-5 bg-white border rounded-3 text-center">
+                    <p>{% trans 'There are no projects to show' %}</p>
+                    <p>
+                    <i class="bi bi-emoji-frown fs-1"></i>
+                    </p>
+                </div>
+            </div>
         {% endfor %}
     </div>
 
