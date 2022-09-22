@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
 from django import forms
 from django.contrib.auth.models import User
+from django.utils.translation import gettext as _
 
 attrs = {'class': 'form-control'}
 
@@ -10,12 +11,12 @@ class UserLoginForm(AuthenticationForm):
         super(UserLoginForm, self).__init__(*args, **kwargs)
 
     username = forms.CharField(
-        label='UserName',
+        label=_('UserName'),
         widget=forms.TextInput(attrs=attrs)
     )
 
     password = forms.CharField(
-        label='Password',
+        label=_('Password'),
         widget=forms.PasswordInput(attrs=attrs)
     )
 
@@ -25,28 +26,28 @@ class UserLoginForm(AuthenticationForm):
 class UserRegisterForm(UserCreationForm):
 
     first_name = forms.CharField(
-        label='First Name',
+        label=_('First Name'),
         widget=forms.TextInput(attrs=attrs)
     )
     last_name = forms.CharField(
-        label='Last Name',
+        label=_('Last Name'),
         widget=forms.TextInput(attrs=attrs)
     )
     username = forms.CharField(
-        label='UserName',
+        label=_('UserName'),
         widget=forms.TextInput(attrs=attrs)
     )
     email = forms.CharField(
-        label='Email',
+        label=_('Email'),
         widget=forms.TextInput(attrs=attrs)
     )
     password1 = forms.CharField(
-        label='Password',
+        label=_('Password'),
         strip=False,
         widget=forms.PasswordInput(attrs=attrs)
     )
     password2 = forms.CharField(
-        label='Password Confirmation',
+        label=_('Password Confirmation'),
         strip=False,
         widget=forms.PasswordInput(attrs=attrs)
     )
@@ -63,6 +64,7 @@ class ProfileForm(UserChangeForm):
         model = User
         fields = ['first_name', 'last_name', 'email']
         widgets = {
+            # 'username': forms.TextInput(attrs=attrs),
             'first_name': forms.TextInput(attrs=attrs),
             'last_name': forms.TextInput(attrs=attrs),
             'email': forms.EmailInput(attrs=attrs)
