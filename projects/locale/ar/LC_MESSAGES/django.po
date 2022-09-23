@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-22 16:06+0000\n"
+"POT-Creation-Date: 2022-09-23 06:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,21 +31,39 @@ msgstr "العنوان"
 msgid "description"
 msgstr "الوصف"
 
-#: projects/models.py:17
+#: projects/models.py:16 projects/models.py:17
+#, fuzzy
+#| msgid "category"
+msgid "Category"
+msgstr "التصنيف"
+
+#: projects/models.py:21
 msgid "Pending"
 msgstr "قيد التنفيذ"
 
-#: projects/models.py:18
+#: projects/models.py:22
 msgid "Completed"
 msgstr "مكتمل"
 
-#: projects/models.py:19
+#: projects/models.py:23
 msgid "Postponed"
 msgstr "معلق"
 
-#: projects/models.py:20
+#: projects/models.py:24
 msgid "Canceled"
 msgstr "ملغي"
+
+#: projects/models.py:48 projects/models.py:49
+#, fuzzy
+#| msgid "New Project"
+msgid "Project"
+msgstr "مشروع جديد"
+
+#: projects/models.py:63 projects/models.py:64
+#, fuzzy
+#| msgid "New Task"
+msgid "Task"
+msgstr "مهمة جديدة"
 
 #: projects/templates/partials/footer.html:5
 msgid "(c) 2022 Al3etiby0. All rights reserved."
