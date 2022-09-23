@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,11 +83,11 @@ WSGI_APPLICATION = 'project_mangement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_pn',
-        'USER': 'postgres',
-        'PASSWORD': 'Seu@',
-        'HOST': 'localhost',
-        'PORT': ''
+        'NAME': 'd6bmkou6p81vfd',
+        'USER': 'gteerkdppufkqk',
+        'PASSWORD': 'c6c6470978aff279b633770e995c2e692200a067737ea43cf1a00d4f7abff69d',
+        'HOST': 'ec2-54-77-40-202.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
@@ -126,6 +128,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'staticfiiles')
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -135,9 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 
-INTERNAL_IPS = [
-    "127.0.0.1"
+ALLOWED_HOSTS = [
+    'django-myapp.herokuapp.com',
+    '127.0.0.1'
 ]
-
-ALLOWED_HOSTS = ["127.0.0.1",
-                 '192.168.100.215']
