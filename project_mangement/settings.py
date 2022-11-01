@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'project_mangement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd6bmkou6p81vfd',
-        'USER': 'gteerkdppufkqk',
-        'PASSWORD': 'c6c6470978aff279b633770e995c2e692200a067737ea43cf1a00d4f7abff69d',
-        'HOST': 'ec2-54-77-40-202.eu-west-1.compute.amazonaws.com',
+        'NAME': 'django_pn',
+        'USER': 'postgres',
+        'PASSWORD': 'Seu@',
+        'HOST': 'localhost',
         'PORT': '5432'
     }
 }
@@ -144,6 +144,5 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 
 ALLOWED_HOSTS = [
-    'django-myapp.herokuapp.com',
     '127.0.0.1'
 ]
